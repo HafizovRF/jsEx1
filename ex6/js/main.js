@@ -44,5 +44,5 @@ for (let ind = 0; ind< optExpItems.length; ind++){
 incomeInput.value = 'работа, шабашки, электроника';
 incomeChB.value = "on";
 sumInput.value = 8500000;
-percentInput.value = 30;
+percentInput.value = 30;    
 

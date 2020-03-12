@@ -13,12 +13,14 @@ class Options {
         let mDiv = document.createElement('div');
         elmParent.appendChild(mDiv);
         mDiv.textContent = divText;
-        mDiv.style.width = this.width+'px';
+        /*mDiv.style.width = this.width+'px';
         mDiv.style.height = this.height+'px';
         mDiv.style.background = this.bg;
-        
         mDiv.style.fontSize = this.fontSize+'px';
-        mDiv.style.textAlign = this.textAlign;
+        mDiv.style.textAlign = this.textAlign;*/
+
+        let param = `height:${this.height}px; width:${this.width}px; background:${this.bg}; font-size:${this.fontSize}px; text-align:${this.textAlign}`;
+		mDiv.style.cssText = param;
         return mDiv;
     }
 }

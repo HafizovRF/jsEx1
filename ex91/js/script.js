@@ -1,5 +1,31 @@
+'use strict';
+
+class Options {
+    constructor(height, width, bg, fontSize, textAlign){
+        this.height = height;
+        this.width = width; 
+        this.bg = bg;
+        this.fontSize =fontSize;
+        this.textAlign = textAlign; 
+    }
+
+    createDiv(elmParent, divText){
+        let mDiv = document.createElement('div');
+        elmParent.appendChild(mDiv);
+        mDiv.textContent = divText;
+        mDiv.style.width = this.width+'px';
+        mDiv.style.height = this.height+'px';
+        mDiv.style.background = this.bg;
+        
+        mDiv.style.fontSize = this.fontSize+'px';
+        mDiv.style.textAlign = this.textAlign;
+        return mDiv;
+    }
+}
+
+
 window.addEventListener('DOMContentLoaded', function (event) {
-    'use strict';
+    
 
     let tabControl = document.querySelector('.info'),
         tabHead = document.querySelector('.info-header'),
@@ -81,6 +107,10 @@ window.addEventListener('DOMContentLoaded', function (event) {
     
     btnMore.addEventListener('click', function(event){
         showModalOvl.call(this,event);
+        
+        let options = new Options(150,800,'url(img/slider_2.jpg)',36,'right');
+        options.createDiv(tabControl, 'Hallo my frend!');
+
     });
     
     btnDsrptns.forEach(function(elm){
@@ -91,7 +121,6 @@ window.addEventListener('DOMContentLoaded', function (event) {
 
     function showModalOvl(){
         overlay.style.display = 'block';
-        console.log(this);
         this.classList.add('more-splash');
         document.body.style.overflow = 'hidden';
     }
